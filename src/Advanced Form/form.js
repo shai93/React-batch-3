@@ -13,16 +13,35 @@ class AdvancedForm extends React.Component {
             email: "",
             select: "",
             comments: "",
-            invalid: true
+            invalid: true,
+            err:{
+                username:"",
+                email:""
+            }
         }
     }
 
     handleElements = (event) => {
+        let errorMessage = {...this.state.err};
+
+        if(event.target.name === "username"){
+            if(event.target.value == ""){
+                errorMessage["username"] = <strong style={{color:"red"}}>Username is Required field</strong>
+            }
+        }
+        if(event.target.name === "email"){
+            if(event.target.value == ""){
+                errorMessage["email"] = <strong style={{color:"red"}}>Email is Required field</strong>
+            }
+        }
+        console.log(errorMessage)
+        this.setState({
+            err:errorMessage
+        })
+
         this.setState({
             [event.target.name]: event.target.value
         })
-
-
     }
 
     handleSubmit = (event) => {
@@ -71,14 +90,17 @@ class AdvancedForm extends React.Component {
                             <Form.Group>
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control type="text" name="username" placeholder="name" value={this.state.username} onChange={this.handleElements} />
+                                {this.state.err.username}
                             </Form.Group>
                             <Form.Group >
                                 <Form.Label>Email address</Form.Label>
                                 <Form.Control type="email" name="email" value={this.state.email} placeholder="name@.com" onChange={this.handleElements} />
+                                {this.state.err.email}
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label> select</Form.Label>
                                 <Form.Control as="select" name="select" value={this.state.select} onChange={this.handleElements}>
+                                    <option value="">--Select--</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
