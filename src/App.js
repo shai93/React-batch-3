@@ -11,7 +11,7 @@ import {UserProvider} from './Context Component/UserContext';
 import C from './Context Component/C';
 import Hero from './Error Boundary/Hero';
 import ErrorBoundary from './Error Boundary/ErrorBoundary';
-
+import DemoRef from './DemoRef/DemoRef';
 
 
 
@@ -41,7 +41,8 @@ function App() {
         <Hero name="joker"></Hero>
       </ErrorBoundary> */}
       {/* <Home></Home> */}
-      <Index></Index>
+      {/* <Index></Index> */}
+      <DemoRef></DemoRef>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import Home from './Home';
-import {Link, Route, NavLink, Redirect} from 'react-router-dom';
+import {Link, Route, NavLink, Redirect, Router} from 'react-router-dom';
 import Main from './Main';
-
+import Category from './Category';
 
 class Index extends React.Component {
 
@@ -39,6 +39,9 @@ class Index extends React.Component {
                     <li>
                         <NavLink to="/" activeStyle={{ color: "green" }} exact>Main</NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/category" activeStyle={{ color: "green" }} exact>Category</NavLink>
+                    </li>
                 </ul>
 
 
@@ -62,8 +65,13 @@ class Index extends React.Component {
                 }}></Route>
 
                 <Route path="/" component={Main} exact></Route>
-                <button onClick={this.handleLogout}>Logout</button> &nbsp;&nbsp;&nbsp;
-                <button onClick={this.handleLogin}>Login</button>
+
+                <Route path="/category" component={Category}></Route>
+                
+                {
+                    this.state.login?<button onClick={this.handleLogout}>Logout</button>:<button onClick={this.handleLogin}>Login</button>
+                }    
+                
             </div>
         )
     }
