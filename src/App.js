@@ -12,8 +12,8 @@ import C from './Context Component/C';
 import Hero from './Error Boundary/Hero';
 import ErrorBoundary from './Error Boundary/ErrorBoundary';
 import DemoRef from './DemoRef/DemoRef';
-
-
+import ClassCounter from './Common/ClassCounter';
+import CounterUseEffect from './React Hooks/CounterUseEffect';
 
 function App() {
   return (
@@ -42,7 +42,8 @@ function App() {
       </ErrorBoundary> */}
       {/* <Home></Home> */}
       {/* <Index></Index> */}
-      <DemoRef></DemoRef>
+      {/* <DemoRef></DemoRef> */}
+      <CounterUseEffect></CounterUseEffect>
     </div>
   );
 }
