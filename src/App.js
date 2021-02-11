@@ -13,7 +13,7 @@ import Hero from './Error Boundary/Hero';
 import ErrorBoundary from './Error Boundary/ErrorBoundary';
 import DemoRef from './DemoRef/DemoRef';
 import ClassCounter from './Common/ClassCounter';
-import CounterUseEffect from './React Hooks/CounterUseEffect';
+import UseRefExample from './React Hooks/UseRefExample';
 
 function App() {
   return (
@@ -43,7 +43,7 @@ function App() {
       {/* <Home></Home> */}
       {/* <Index></Index> */}
       {/* <DemoRef></DemoRef> */}
-      <CounterUseEffect></CounterUseEffect>
+      <UseRefExample></UseRefExample>
     </div>
   );
 }
